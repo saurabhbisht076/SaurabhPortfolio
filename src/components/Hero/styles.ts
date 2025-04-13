@@ -9,14 +9,32 @@ export const Container = styled.section`
   position: relative;
 
   .hero-text {
-    & > p {
+    .greeting {
       font-size: 1.8rem;
       color: ${({ theme }) => theme.textColor || 'rgba(255, 255, 255, 0.85)'};
       line-height: 1.6;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       opacity: 0;
       animation: fadeInUp 0.8s ease forwards;
       animation-delay: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      img {
+        margin: 0 0.5rem;
+        animation: wave 2s ease-in-out infinite;
+      }
+    }
+
+    .datetime {
+      font-size: 1.4rem;
+      color: ${({ theme }) => theme.textColor || 'rgba(255, 255, 255, 0.7)'};
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.3s;
+      font-family: 'Courier New', monospace;
     }
 
     h1 {
@@ -54,7 +72,9 @@ export const Container = styled.section`
       position: relative;
       padding-left: 2rem;
       border-left: 4px solid rgba(0, 223, 216, 0.5);
+      font-size: 1.8rem;
       font-weight: 400;
+      color: ${({ theme }) => theme.textColor || 'rgba(255, 255, 255, 0.85)'};
       opacity: 0;
       animation: fadeInUp 0.8s ease forwards;
       animation-delay: 0.6s;
@@ -116,6 +136,8 @@ export const Container = styled.section`
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
     animation-delay: 1s;
+    color: ${({ theme }) => theme.textColor || 'rgba(255, 255, 255, 0.85)'};
+    text-decoration: none;
 
     &::before {
       content: '';
@@ -203,7 +225,50 @@ export const Container = styled.section`
     }
   }
 
-  ${/* Previous animations remain the same */ ''}
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(-10deg);
+    }
+    80% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
   @media(max-width: 960px) {
     display: block;
@@ -217,6 +282,10 @@ export const Container = styled.section`
 
       p.small-resume {
         font-size: 1.6rem;
+      }
+      
+      .datetime {
+        font-size: 1.2rem;
       }
     }
     
@@ -241,6 +310,14 @@ export const Container = styled.section`
       h3 {
         font-size: 1.8rem;
       }
+      
+      .greeting {
+        font-size: 1.6rem;
+      }
+      
+      .datetime {
+        font-size: 1.1rem;
+      }
     }
 
     .social-media {
@@ -256,4 +333,4 @@ export const Container = styled.section`
     margin-top: 45%;
     padding: 0 2rem;
   }
-`
+`;

@@ -8,12 +8,20 @@ import githubIcon from '../../assets/github.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import Hello from '../../assets/Hello.gif'
 import telegram from '../../assets/telegram.svg'
+
 export function Hero() {
+  const currentDateTime = new Date().toISOString().slice(0, 19).replace('T', ' ')
+
   return (
     <Container id="home">
       <div className="hero-text">
         <ScrollAnimation animateIn="fadeInUp">
-          <p>Hello <img src={Hello} alt="Hello" width="20px"/>, I'm</p>
+          <p className="greeting">
+            Hello
+            <img src={Hello} alt="Hello" width="20px"/>
+            , I'm
+          </p>
+          <p className="datetime">{currentDateTime} UTC</p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}>
           <h1>Saurabh Bisht</h1>
@@ -30,34 +38,36 @@ export function Hero() {
           </BrowserRouter>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={1 * 1000}>
-      <div className="social-media"><a
-        href="https://www.linkedin.com/in/saurabhbisht076/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img src={linkedin} alt="Linkedin" />
-      </a>
-        <a
-          href="https://github.com/saurabhbisht076"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={githubIcon} alt="GitHub" />
-        </a>
-        <a
-          href="https://api.whatsapp.com/send/?phone=%2B918533019652&text=Hello+Saurabh+I+found+your+contact+through+portfolio+site.%0A%0A"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={whatsapp} alt="Whatsapp" />
-        </a>
-        <a
-          href="https://t.me/bankaisaurabh"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={telegram} alt="telegram" />
-        </a></div>
+          <div className="social-media">
+            <a
+              href="https://www.linkedin.com/in/saurabhbisht076/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={linkedin} alt="Linkedin" />
+            </a>
+            <a
+              href="https://github.com/saurabhbisht076"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={githubIcon} alt="GitHub" />
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=%2B918533019652&text=Hello+Saurabh+I+found+your+contact+through+portfolio+site.%0A%0A"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={whatsapp} alt="Whatsapp" />
+            </a>
+            <a
+              href="https://t.me/bankaisaurabh"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={telegram} alt="telegram" />
+            </a>
+          </div>
         </ScrollAnimation>
       </div>
       <div className="hero-image">
