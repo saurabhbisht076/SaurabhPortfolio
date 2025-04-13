@@ -26,17 +26,6 @@ export const Container = styled.section`
         animation: wave 2s ease-in-out infinite;
       }
     }
-
-    .datetime {
-      font-size: 1.4rem;
-      color: ${({ theme }) => theme.textColor || 'rgba(255, 255, 255, 0.7)'};
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
-      animation-delay: 0.3s;
-      font-family: 'Courier New', monospace;
-    }
-
     h1 {
       font-size: 7rem;
       line-height: 1.2;

@@ -21,7 +21,6 @@ export function Hero() {
             <img src={Hello} alt="Hello" width="20px"/>
             , I'm
           </p>
-          <p className="datetime">{currentDateTime} UTC</p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}>
           <h1>Saurabh Bisht</h1>
