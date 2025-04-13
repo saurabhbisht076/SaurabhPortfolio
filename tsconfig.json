@@ -19,9 +19,14 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["@types/babel__generator/index.d.ts"]
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
+    "types": []  // Remove the specific @types/babel__generator reference
   },
   "include": [
-    "src"
+    "src",
+    "src/types/*.d.ts"  // Include custom type definitions
   ]
 }

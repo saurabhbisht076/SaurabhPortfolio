@@ -25,11 +25,13 @@ export function About() {
             Hi there! I'm Saurabh, an enthusiastic Software Engineer skilled in web development,Problem Solving, and scalable software solutions
           </p>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000} style={{ marginTop: "2rem", marginBottom: "2rem" }}>
-          <p>
-            I build responsive web applications, and implement robust backend services.
-          </p>
-        </ScrollAnimation>
+        <div style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+          <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000}>
+            <p>
+              I build responsive web applications, and implement robust backend services.
+            </p>
+          </ScrollAnimation>
+        </div>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.3 * 1000}>
           <p>
             I Like to learn new technologies and frameworks, and I am always looking for opportunities to grow and improve my skills.
