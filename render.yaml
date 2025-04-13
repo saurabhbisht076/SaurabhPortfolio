@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: saurabh-portfolio
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
+    branch: main
+    healthCheckPath: /
+    buildFilter:
+      paths:
+        - src/**/*.ts
+        - src/**/*.tsx
+        - package.json
+        - public/**
+        - styles/**
